@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52Q1WP458H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52Q1WP458H');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Raksha Bandhan - SK Rathore ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            background: #fce8ec;
+        }
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Page System */
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .page.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+
+        .page::-webkit-scrollbar { width: 4px; }
+        .page::-webkit-scrollbar-thumb { background: #d48b9f; border-radius: 20px; }
+
+        /* Animation Elements */
+        .anim-el {
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .page.active .anim-el {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .page.active .anim-el:nth-child(1) { transition-delay: 0.05s; }
+        .page.active .anim-el:nth-child(2) { transition-delay: 0.15s; }
+        .page.active .anim-el:nth-child(3) { transition-delay: 0.25s; }
+        .page.active .anim-el:nth-child(4) { transition-delay: 0.35s; }
+        .page.active .anim-el:nth-child(5) { transition-delay: 0.45s; }
+        .page.active .anim-el:nth-child(6) { transition-delay: 0.55s; }
+        .page.active .anim-el:nth-child(7) { transition-delay: 0.65s; }
+        .page.active .anim-el:nth-child(8) { transition-delay: 0.75s; }
+
+        /* Buttons */
+        .btn-primary {
+            padding: 0.9rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary:hover {
+            transform: scale(1.06);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+        }
+        .btn-gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+        .btn-gold:hover { background: linear-gradient(135deg, #d97706, #b45309); }
+        .btn-teal { background: linear-gradient(135deg, #0d9488, #0f766e); color: white; }
+        .btn-teal:hover { background: linear-gradient(135deg, #0f766e, #0d5c54); }
+        .btn-rose { background: linear-gradient(135deg, #ec4899, #db2777); color: white; }
+        .btn-rose:hover { background: linear-gradient(135deg, #db2777, #be185d); }
+        .btn-purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; }
+        .btn-purple:hover { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+
+        /* Hero Box - Main Page - NEW COLORS */
+        .hero-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            border-radius: 48px;
+            padding: 2.8rem 2.5rem;
+            border: 2px solid rgba(245, 158, 11, 0.3);
+            box-shadow: 0 30px 70px rgba(139, 92, 246, 0.2), 0 0 40px rgba(245, 158, 11, 0.05);
+            max-width: 780px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .hero-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-box::-webkit-scrollbar { width: 3px; }
+        .hero-box::-webkit-scrollbar-thumb { background: #8b5cf6; border-radius: 20px; }
+        
+        .hero-box .name-tag {
+            position: sticky;
+            bottom: 0;
+            text-align: right;
+            font-size: 0.85rem;
+            color: #7c3aed;
+            opacity: 0.8;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        .line-card {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.7rem;
+            border-left: 3px solid #8b5cf6;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+        .line-card:hover {
+            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.85);
+            border-left-color: #f59e0b;
+        }
+        .line-card .emoji { font-size: 1.3rem; margin-right: 0.6rem; }
+        .line-card .text { font-size: 0.95rem; color: #374151; line-height: 1.5; }
+        .line-card .text .hl { color: #7c3aed; font-weight: 600; }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+            width: 100%;
+            max-width: 900px;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(-1deg);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 1rem 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            text-align: center;
+            letter-spacing: 0.5px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.1rem;
+        }
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        /* Lines Page */
+        .lines-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 2.5rem;
+            max-width: 750px;
+            width: 100%;
+            border: 2px solid rgba(236, 72, 153, 0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            position: relative;
+            max-height: 75vh;
+            overflow-y: auto;
+        }
+        .lines-card::-webkit-scrollbar { width: 3px; }
+        .lines-card::-webkit-scrollbar-thumb { background: #ec4899; border-radius: 20px; }
+
+        /* Particles */
+        #particles-container {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: floatUp linear infinite;
+            opacity: 0;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-10vh) scale(1) rotate(720deg); opacity: 0; }
+        }
+
+        /* Heart Floating */
+        .heart-float {
+            position: absolute;
+            font-size: 2rem;
+            animation: heartFloat 4s ease-in-out infinite;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-30px) scale(1.2); opacity: 0.6; }
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            padding: 1.5rem;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            max-width: 550px;
+            width: 100%;
+            transform: scale(0.85) translateY(30px);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-overlay.open .modal-content {
+            transform: scale(1) translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 2rem;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: none;
+            border: none;
+            line-height: 1;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover { 
+            color: #7c3aed; 
+            background: rgba(139, 92, 246, 0.1);
+            transform: rotate(90deg);
+        }
+        .modal-image {
+            width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+        .modal-funny-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #374151;
+            padding: 0.8rem 0 0.3rem;
+            font-weight: 500;
+            border-top: 1px solid #f3e8ff;
+            margin-top: 0.8rem;
+        }
+        .modal-funny-text .big-emoji { font-size: 2rem; display: block; margin-bottom: 0.3rem; }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.1rem;
+            color: #7c3aed;
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 640px) {
+            .page { padding: 1rem; }
+            .hero-box { padding: 1.5rem; border-radius: 32px; max-height: 85vh; }
+            .hero-box h1 { font-size: 2.8rem !important; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .line-card { padding: 0.6rem 1rem; }
+            .line-card .text { font-size: 0.85rem; }
+            .btn-primary { padding: 0.7rem 1.8rem; font-size: 0.9rem; }
+            .modal-content { padding: 1.2rem; }
+            .lines-card { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PARTICLES ===== -->
+    <div id="particles-container"></div>
+
+    <!-- ===== PAGE 1: MAIN WELCOME - NEW COLORS ===== -->
+    <section id="page1" class="page active" style="background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 30%, #fef3c7 70%, #fce7f3 100%);">
+        <div class="hero-box text-center relative z-10">
+            <!-- Floating Hearts -->
+            <div class="heart-float" style="top: 5%; left: 3%; animation-delay: 0s; color: #8b5cf6;">💜</div>
+            <div class="heart-float" style="top: 8%; right: 5%; animation-delay: 1.5s; color: #f59e0b;">⭐</div>
+            <div class="heart-float" style="bottom: 15%; left: 5%; animation-delay: 2.5s; color: #ec4899;">💗</div>
+            <div class="heart-float" style="bottom: 10%; right: 3%; animation-delay: 0.8s; color: #0d9488;">🌿</div>
+            
+            <h1 class="font-dancing text-6xl md:text-7xl" style="background: linear-gradient(135deg, #7c3aed, #ec4899, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; anim-el leading-tight;">
+                🌸 Raksha Bandhan
+            </h1>
+            
+            <div class="mt-4 text-left anim-el">
+                <!-- Line 1 -->
+                <div class="line-card">
+                    <div class="flex items-start">
+                        <span class="emoji">💝</span>
+                        <span class="text">"<span class="hl">Sister</span> — the one who knows your secrets, keeps your dreams, and loves you without conditions."</span>
+                    </div>
+                </div>
+                
+                <!-- Line 2 -->
+                <div class="line-card">
+                    <div class="flex items-start">
+                        <span class="emoji">🌸</span>
+                        <span class="text">"From fighting over the TV remote to fighting for each other — <span class="hl">our bond</span> is the strongest thing I know."</span>
+                    </div>
+                </div>
+                
+                <!-- Line 3 -->
+                <div class="line-card">
+                    <div class="flex items-start">
+                        <span class="emoji">💫</span>
+                        <span class="text">"A sister is a <span class="hl">gift to the heart</span>, a friend to the soul, and a treasure that grows more precious with time."</span>
+                    </div>
+                </div>
+                
+                <!-- Line 4 -->
+                <div class="line-card">
+                    <div class="flex items-start">
+                        <span class="emoji">🌈</span>
+                        <span class="text">"You are the <span class="hl">rainbow</span> after my storms, the <span class="hl">music</span> in my silence, and the <span class="hl">strength</span> I never knew I needed."</span>
+                    </div>
+                </div>
+                
+                <!-- Line 5 -->
+                <div class="line-card">
+                    <div class="flex items-start">
+                        <span class="emoji">💖</span>
+                        <span class="text">"This Rakhi is not just a thread — it's my <span class="hl">promise</span> to protect you, my <span class="hl">vow</span> to stand by you, my <span class="hl">oath</span> to love you forever."</span>
+                    </div>
+                </div>
+                
+                <!-- Line 6 -->
+                <div class="line-card">
+                    <div class="flex items-start">
+                        <span class="emoji">🌺</span>
+                        <span class="text">"In the garden of life, you are the <span class="hl">most beautiful flower</span> — spreading love, bringing joy, making everything around you bloom."</span>
+                    </div>
+                </div>
+                
+                <!-- Line 7 -->
+                <div class="line-card">
+                    <div class="flex items-start">
+                        <span class="emoji">🌟</span>
+                        <span class="text">"Sisters are like <span class="hl">stars</span> — always there, always shining, guiding you home even in the darkest nights."</span>
+                    </div>
+                </div>
+                
+                <!-- Line 8 -->
+                <div class="line-card">
+                    <div class="flex items-start">
+                        <span class="emoji">💕</span>
+                        <span class="text">"You are my <span class="hl">first friend</span>, my <span class="hl">best companion</span>, and my <span class="hl">forever confidant</span>. No one gets me like you do."</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="toPage2" class="btn-primary btn-gold mt-4 anim-el">
+                ✨ See Our Beautiful Memories
+            </button>
+            
+            <div class="name-tag anim-el">✨ SK Rathore ✨</div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 2: GALLERY - TEAL & CORAL ===== -->
+    <section id="page2" class="page" style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 30%, #fce7f3 70%, #fef2f2 100%);">
+        <div class="container mx-auto w-full max-w-6xl px-2">
+            <h2 class="font-dancing text-4xl md:text-5xl" style="background: linear-gradient(135deg, #0d9488, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-align: center; anim-el mb-2;">
+                📸 Our Beautiful Journey
+            </h2>
+            <p class="text-center text-gray-600 anim-el mb-6 text-sm md:text-base">
+                👆 Click on any picture for a surprise!
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item anim-el" data-funny="😂 Remember when we used to fight over the last piece of chocolate? And I always lost!">
+                    <img src="c:\Users\arunr\OneDrive\Desktop\RK\sister brother.png" alt="Sister Brother">
+                    <div class="overlay">💕 Forever Together</div>
+                </div>
+                <div class="gallery-item anim-el" style="transition-delay: 0.1s;" data-funny="🤣 You still think you're the 'older' one? I'm the one who protects you!">
+                    <img src="c:\Users\arunr\OneDrive\Desktop\RK\Rakshabandhan dp.jpg" alt="Rakhi Celebration">
+                    <div class="overlay">🌸 Rakhi Celebration</div>
+                </div>
+                <div class="gallery-item anim-el" style="transition-delay: 0.2s;" data-funny="😜 You're the only one who can make me laugh even when I'm angry!">
+                    <img src="c:\Users\arunr\OneDrive\Desktop\RK\ima1.jpg" alt="Memory">
+                    <div class="overlay">💖 Cherished Moments</div>
+                </div>
+                <div class="gallery-item anim-el" style="transition-delay: 0.3s;" data-funny="🤪 Remember when you tried to cook and we ended up ordering pizza? Best day ever!">
+                    <img src="c:\Users\arunr\OneDrive\Desktop\RK\Raksha Bandhan Photos_, Raksha Bandhan Pics Or Raksha Bandhan Full Hd Photo.jpg" alt="Raksha Bandhan">
+                    <div class="overlay">✨ Bond of Love</div>
+                </div>
+                <div class="gallery-item anim-el" style="transition-delay: 0.4s;" data-funny="😎 You're the only sister who can bully me better than anyone else!">
+                    <img src="c:\Users\arunr\OneDrive\Desktop\RK\indian-asian-brothers-sisters-celebrating-600nw-2480867183.webp" alt="Celebration">
+                    <div class="overlay">🎉 Celebrating Together</div>
+                </div>
+                <div class="gallery-item anim-el" style="transition-delay: 0.5s;" data-funny="🥰 Thank you for being my biggest fan and my harshest critic — I need both!">
+                    <img src="c:\Users\arunr\OneDrive\Desktop\RK\happy-raksha-bandhan-wishes-2024-rakhi-wishes-quotes-status-images-for-whatsapp-and-facebook-to-share-with-brother-and-sisters.webp" alt="Wishes">
+                    <div class="overlay">💫 Endless Love</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button id="toPage3" class="btn-primary btn-teal anim-el">
+                    💝 Beautiful Words For You
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PAGE 3: EXTRA LINES ===== -->
+    <section id="page3" class="page" style="background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 30%, #faf5ff 70%, #fef3c7 100%);">
+        <div class="lines-card">
+            <div class="text-center mb-4">
+                <h3 class="font-dancing text-4xl md:text-5xl" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    💖 For My Beautiful Sister
+                </h3>
+                <div class="w-20 h-0.5 bg-gradient-to-r from-rose-300 via-purple-300 to-rose-300 mx-auto mt-2"></div>
+            </div>
+
+            <div class="text-left">
+                <div class="line-card" style="border-left-color: #ec4899;">
+                    <div class="flex items-start">
+                        <span class="emoji">🌸</span>
+                        <span class="text">"You are the <span class="hl">sunshine</span> that brightens my darkest days and the <span class="hl">moonlight</span> that calms my restless nights."</span>
+                    </div>
+                </div>
+                <div class="line-card" style="border-left-color: #8b5cf6;">
+                    <div class="flex items-start">
+                        <span class="emoji">💕</span>
+                        <span class="text">"From sharing our toys to sharing our dreams — <span class="hl">you</span> have always been my favorite person."</span>
+                    </div>
+                </div>
+                <div class="line-card" style="border-left-color: #f59e0b;">
+                    <div class="flex items-start">
+                        <span class="emoji">🌺</span>
+                        <span class="text">"A sister is a <span class="hl">forever friend</span> who never judges, always understands, and loves beyond words."</span>
+                    </div>
+                </div>
+                <div class="line-card" style="border-left-color: #0d9488;">
+                    <div class="flex items-start">
+                        <span class="emoji">✨</span>
+                        <span class="text">"You are not just my sister — you are my <span class="hl">confidant</span>, my <span class="hl">protector</span>, and my <span class="hl">biggest blessing</span>."</span>
+                    </div>
+                </div>
+                <div class="line-card" style="border-left-color: #ec4899;">
+                    <div class="flex items-start">
+                        <span class="emoji">💖</span>
+                        <span class="text">"This Raksha Bandhan, I wish you all the <span class="hl">happiness</span>, all the <span class="hl">love</span>, and all the <span class="hl">dreams</span> you deserve."</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 pt-3 border-t border-gray-200">
+                <p class="font-dancing text-2xl" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    With all my love,<br>Your Brother ❤️
+                </p>
+                <p class="text-xs text-gray-400 mt-1 signature">— SK Rathore</p>
+            </div>
+        </div>
+
+        <div class="flex gap-4 mt-6 flex-wrap justify-center">
+            <button id="showWish" class="btn-primary btn-rose anim-el">
+                💖 Open Heartfelt Wish
+            </button>
+            <button id="resetBtn" class="btn-primary btn-purple anim-el">
+                🔄 Start Over
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== IMAGE MODAL WITH FUNNY LINES ===== -->
+    <div id="imageModal" class="modal-overlay">
+        <div class="modal-content" style="max-width: 600px;">
+            <button class="modal-close">✕</button>
+            <img id="modalImage" src="" alt="Memory" class="modal-image">
+            <div id="funnyText" class="modal-funny-text">
+                <span class="big-emoji">😂</span>
+                Loading funny line...
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== WISHES MODAL ===== -->
+    <div id="wishModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">✕</button>
+            <div class="text-center">
+                <div class="text-5xl mb-3">💝</div>
+                <h3 class="font-dancing text-4xl" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">My Dearest Sister</h3>
+                <div class="w-16 h-0.5 bg-gradient-to-r from-rose-300 to-purple-300 mx-auto mb-5"></div>
+                
+                <p class="text-gray-700 leading-relaxed text-base md:text-lg">
+                    <span class="font-bold text-rose-600 text-xl">Happy Raksha Bandhan!</span><br><br>
+                    
+                    From childhood fights to endless giggles,<br>
+                    From sharing secrets to wiping tears —<br>
+                    You've been my protector, my confidant, my best friend.<br><br>
+                    
+                    <span class="font-semibold">This Rakhi is not just a thread,</span><br>
+                    It's my promise to always have your back,<br>
+                    To celebrate your victories,<br>
+                    And to hold your hand through every storm.<br><br>
+                    
+                    <span class="font-dancing text-2xl block mt-4" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        I love you more than words can say ❤️
+                    </span>
+                    
+                    <span class="block mt-2 text-sm text-gray-500">
+                        — With all my heart, Your Brother
+                    </span>
+                    <span class="block mt-1 text-xs text-gray-400 signature">SK Rathore</span>
+                </p>
+                
+                <div class="mt-5 flex justify-center gap-2 text-2xl">
+                    <span>🌸</span><span>💕</span><span>🌺</span><span>💖</span><span>🌹</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // ===== DOM REFS =====
+            const page1 = document.getElementById('page1');
+            const page2 = document.getElementById('page2');
+            const page3 = document.getElementById('page3');
+            
+            const toPage2Btn = document.getElementById('toPage2');
+            const toPage3Btn = document.getElementById('toPage3');
+            const showWishBtn = document.getElementById('showWish');
+            const resetBtn = document.getElementById('resetBtn');
+
+            const imageModal = document.getElementById('imageModal');
+            const wishModal = document.getElementById('wishModal');
+            const modalImage = document.getElementById('modalImage');
+            const funnyText = document.getElementById('funnyText');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const closeBtns = document.querySelectorAll('.modal-close');
+
+            // ===== PARTICLES =====
+            function createParticles() {
+                const container = document.getElementById('particles-container');
+                const emojis = ['🌸', '💕', '🌺', '✨', '💖', '🌹', '❤️', '💜', '⭐'];
+                for (let i = 0; i < 35; i++) {
+                    const p = document.createElement('div');
+                    p.className = 'particle';
+                    const size = Math.random() * 20 + 10;
+                    p.style.width = size + 'px';
+                    p.style.height = size + 'px';
+                    p.style.left = Math.random() * 100 + '%';
+                    p.style.bottom = '-20px';
+                    p.style.fontSize = size + 'px';
+                    p.style.background = 'transparent';
+                    p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    p.style.animationDuration = (Math.random() * 14 + 10) + 's';
+                    p.style.animationDelay = (Math.random() * 10) + 's';
+                    container.appendChild(p);
+                }
+            }
+            createParticles();
+
+            // ===== PAGE SWITCH =====
+            function switchPage(from, to) {
+                from.classList.remove('active');
+                setTimeout(() => {
+                    to.classList.add('active');
+                    to.querySelectorAll('.anim-el').forEach(el => {
+                        el.style.transition = 'none';
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(50px) scale(0.95)';
+                        setTimeout(() => {
+                            el.style.transition = '';
+                            el.style.opacity = '';
+                            el.style.transform = '';
+                        }, 10);
+                    });
+                }, 200);
+            }
+
+            toPage2Btn.addEventListener('click', () => switchPage(page1, page2));
+            toPage3Btn.addEventListener('click', () => switchPage(page2, page3));
+            
+            resetBtn.addEventListener('click', () => {
+                page3.classList.remove('active');
+                page2.classList.remove('active');
+                setTimeout(() => {
+                    page1.classList.add('active');
+                    page1.querySelectorAll('.anim-el').forEach(el => {
+                        el.style.transition = 'none';
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(50px) scale(0.95)';
+                        setTimeout(() => {
+                            el.style.transition = '';
+                            el.style.opacity = '';
+                            el.style.transform = '';
+                        }, 10);
+                    });
+                }, 200);
+            });
+
+            // ===== MODALS =====
+            function openModal(modal) {
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal(modal) {
+                modal.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            }
+
+            // ===== GALLERY CLICK WITH FUNNY LINES =====
+            const funnyMessages = [
+                { emoji: '😂', text: 'Remember when we used to fight over the last piece of chocolate? And I always lost!' },
+                { emoji: '🤣', text: 'You still think you\'re the "older" one? I\'m the one who protects you!' },
+                { emoji: '😜', text: 'You\'re the only one who can make me laugh even when I\'m angry!' },
+                { emoji: '🤪', text: 'Remember when you tried to cook and we ended up ordering pizza? Best day ever!' },
+                { emoji: '😎', text: 'You\'re the only sister who can bully me better than anyone else!' },
+                { emoji: '🥰', text: 'Thank you for being my biggest fan and my harshest critic — I need both!' },
+                { emoji: '😍', text: 'You\'re the reason I believe in love, laughter, and happily ever after!' },
+                { emoji: '🤗', text: 'No matter how far we are, you\'re always in my heart. Miss you so much!' },
+                { emoji: '😘', text: 'You\'re not just my sister, you\'re my first friend and my forever favorite person!' },
+                { emoji: '💕', text: 'From stealing my clothes to stealing my heart — you\'ve done it all, and I love you for it!' }
+            ];
+
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    if (img) {
+                        modalImage.src = img.src;
+                        const customMsg = this.dataset.funny;
+                        let msg;
+                        if (customMsg) {
+                            const randomEmoji = ['😂', '🤣', '😜', '🤪', '😎', '🥰', '😍', '🤗', '😘', '💕'][Math.floor(Math.random() * 10)];
+                            msg = { emoji: randomEmoji, text: customMsg };
+                        } else {
+                            msg = funnyMessages[index % funnyMessages.length];
+                        }
+                        funnyText.innerHTML = `<span class="big-emoji">${msg.emoji}</span> ${msg.text}`;
+                        openModal(imageModal);
+                    }
+                });
+            });
+
+            showWishBtn.addEventListener('click', () => openModal(wishModal));
+
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const modal = this.closest('.modal-overlay');
+                    if (modal) closeModal(modal);
+                });
+            });
+
+            document.querySelectorAll('.modal-overlay').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) closeModal(this);
+                });
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m));
+                }
+            });
+
+            // ===== INITIAL ACTIVATION =====
+            setTimeout(() => {
+                document.querySelectorAll('#page1 .anim-el').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0) scale(1)';
+                });
+            }, 100);
+
+        });
+    </script>
+
+</body>
+</html>
